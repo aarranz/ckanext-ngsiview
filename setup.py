@@ -19,6 +19,10 @@
 
 from setuptools import setup, find_packages
 
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 setup(
     name='ckanext-right_time_context',
     version='0.9',
@@ -34,6 +38,8 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires=[],
     include_package_data=True,
+    long_description=read('README.md'),
+    long_description_content_type="text/markdown",
     package_data={
     },
     data_files=[],
